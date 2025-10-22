@@ -35,7 +35,7 @@ class NaiveBayes :
       posterior = posterior +prior
       posteriors.append(posterior)
 
-    return self.__classes[np.argmax](posteriors)
+    return self._classes[np.argmax(posteriors)]
   
   def _pdf(self, class_idx, x):
     mean = self.__mean[class_idx]
