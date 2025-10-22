@@ -40,6 +40,8 @@ class NaiveBayes :
   def _pdf(self, class_idx, x):
     mean = self.__mean[class_idx]
     var = self.__var[class_idx]
+    eps = 1e-6
+    var = var + eps
     numerator = np.exp(-((x - mean)**2) / (2 * var))
     denominator = np.sqrt(2 * np.pi * var)
     return numerator / denominator
